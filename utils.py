@@ -1,5 +1,4 @@
 import os
-import cv2
 
 
 def ensure_dir(path: str):
@@ -12,4 +11,5 @@ def validate_extension(filename: str) -> bool:
 
 
 def save_image(path: str, image) -> bool:
+    import cv2
     return cv2.imwrite(path, image)

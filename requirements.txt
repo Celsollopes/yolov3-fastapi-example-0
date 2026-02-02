@@ -7,3 +7,5 @@ tensorflow
 nest_asyncio
 python-multipart
 requests
+pytest
+httpx

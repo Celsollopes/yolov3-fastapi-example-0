@@ -2,13 +2,13 @@ import io
 import os
 import uvicorn
 import numpy as np
-import cv2
+# import cv2
 
 from enum import Enum
 from fastapi import FastAPI, UploadFile, File, HTTPException, Form
 from fastapi.responses import StreamingResponse
 
-from model import detect_and_draw_box
+# from model import detect_and_draw_box
 from utils import ensure_dir, validate_extension
 
 
@@ -47,9 +47,15 @@ def prediction(model: Model = Form(...),
 
     if image is None:
         raise HTTPException(status_code=400, detail="Could not decode image file")
-
+    
     # Run object detection and draw boxes
     try:
+        #--------------------------------------------------------------------------
+        # lazy imports to avoid heavy deps at module import time (helps CI)
+        from model import detect_and_draw_box
+        import cv2
+        #--------------------------------------------------------------------------
+
         output_image = detect_and_draw_box(image, model=model.value)
     except Exception as e:
         # fallback: annotate input image with an error box/text so the endpoint still returns an image
