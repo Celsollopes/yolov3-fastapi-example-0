@@ -4,3 +4,4 @@ numpy
 pytest
 httpx
 requests
+python-multipart
