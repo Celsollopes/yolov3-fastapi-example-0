@@ -31,7 +31,10 @@ def home():
 
 
 @app.post("/predict")
-def prediction(model: Model = Form(...), file: UploadFile = File(...)):
+def prediction(model: Model = Form(...), 
+               file: UploadFile = File(...), 
+               confidence: float = Form(0.5) # between 0 and 1 - new parameter
+               ):
     filename = file.filename
     if not validate_extension(filename):
         raise HTTPException(status_code=415, detail="Unsupported file provided.")
