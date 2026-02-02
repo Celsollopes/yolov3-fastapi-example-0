@@ -1,3 +1,4 @@
+![GitHub License](https://img.shields.io/github/license/Celsollopes/yolov3-fastapi-example-0)
 # YOLOV3 Object Detection API
 
 A FastAPI application for object detection in images using the pre-trained YOLOV3 (or YOLOV3-Tiny) model.
