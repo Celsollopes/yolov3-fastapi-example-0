@@ -2,7 +2,7 @@
 [![CI](https://github.com/Celsollopes/yolov3-fastapi-example-0/actions/workflows/ci.yml/badge.svg)](https://github.com/Celsollopes/yolov3-fastapi-example-0/actions)
 # YOLOV3 Object Detection API
 
-A FastAPI application for object detection in images using the pre-trained YOLOV3 (or YOLOV3-Tiny) model.
+A FastAPI application for object detection in images using the pre-trained YOLOV3 (or YOLOV3-Tiny) model. This project have code review, GitHub Actions configured, tests CI/CD.
 
 ## Overview
 
