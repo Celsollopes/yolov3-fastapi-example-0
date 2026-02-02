@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+env/
+venv/
+.venv/
+.env
+
+# IDEs
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints
+server-coursera.ipynb
+
+# OS
+.DS_Store
+
+# Data / images (não versionar uploads/modelos grandes)
+
+
