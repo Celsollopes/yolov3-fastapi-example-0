@@ -63,6 +63,10 @@ def prediction(model: Model = Form(...), file: UploadFile = File(...)):
 
     return StreamingResponse(io.BytesIO(encoded_image.tobytes()), media_type='image/jpeg')
 
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
