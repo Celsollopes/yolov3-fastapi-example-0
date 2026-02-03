@@ -252,37 +252,6 @@ This project is based on the "Machine Learning in Production" course by DeepLear
 
 Educational project. Feel free to use and modify as needed.
 
-To deactivate the virtual environment when done:
-
-```bash
-deactivate
-```
-```bash
-pip install -r requirements.txt
-```
-
-## Project Structure
-
-```
-├── README.md
-├── requirements.txt
-├── app.py
-├── model.py
-├── utils.py
-└── images/
-    └── sample_images/
-```
-
-## Running the Application
-
-Start the FastAPI server:
-
-```bash
-uvicorn app:app --reload
-```
-
-Visit `http://localhost:8000/docs` to access the interactive API documentation.
-
 ## Model Details
 
 **YOLOv3** (You Only Look Once v3) is a real-time object detection algorithm that:
