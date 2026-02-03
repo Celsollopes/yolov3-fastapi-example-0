@@ -1,0 +1,3 @@
+[flake8]
+max-line-length = 88
+exclude = .venv,__pycache__,.git,images_uploaded,images_with_boxes,tests/manual_test_predict.py,tests/test_predict.py
