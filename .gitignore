@@ -23,4 +23,7 @@ server-coursera.ipynb
 
 # Data / images (não versionar uploads/modelos grandes)
 
+#logs e paths temporários
+server.log
+temp/
 
