@@ -52,12 +52,12 @@ def prediction(
 
     # Run object detection and draw boxes
     try:
-        # Lazy import the model function to avoid heavy deps at module import time
+        # Lazy import to avoid heavy deps at module import time
         from model import detect_and_draw_box
 
         output_image = detect_and_draw_box(image, model=model.value)
     except Exception as e:
-        # Fallback: annotate input image with an error box/text so the endpoint still returns an image
+        # Fallback: annotate image with error box/text to return image
         print(f"Model detection failed: {e}")
         h, w = image.shape[:2]
         output_image = image.copy()
@@ -75,9 +75,12 @@ def prediction(
     # Encode as JPEG and stream back
     success, encoded_image = cv2.imencode(".jpg", output_image)
     if not success:
-        raise HTTPException(status_code=500, detail="Failed to encode output image")
+        raise HTTPException(
+            status_code=500, detail="Failed to encode output image"
+        )
 
-    return StreamingResponse(io.BytesIO(encoded_image.tobytes()), media_type="image/jpeg")
+    media_type = "image/jpeg"
+    return StreamingResponse(io.BytesIO(encoded_image.tobytes()), media_type=media_type)
 
 
 @app.get("/health")
